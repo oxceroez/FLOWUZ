@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --flowuz-page: #0a0a0e;
+  --flowuz-text: #f7f8f2;
+  --flowuz-muted: rgba(247, 248, 242, 0.68);
+  --flowuz-faint: rgba(247, 248, 242, 0.46);
+  --flowuz-surface: rgba(255, 255, 255, 0.045);
+  --flowuz-surface-strong: rgba(16, 16, 22, 0.88);
+  --flowuz-border: rgba(255, 255, 255, 0.1);
+  --flowuz-shadow: 0 40px 140px rgba(0, 0, 0, 0.38);
+  --flowuz-header: rgba(10, 10, 14, 0.65);
+  --flowuz-card: rgba(255, 255, 255, 0.045);
+  --flowuz-accent: #c5ff3e;
+  --flowuz-accent-glow: rgba(197, 255, 62, 0.22);
+  --flowuz-accent-muted: rgba(197, 255, 62, 0.15);
+  --flowuz-hero-bg: #0a0a0e;
+  --flowuz-mesh-1: rgba(197, 255, 62, 0.12);
+  --flowuz-mesh-2: rgba(120, 140, 255, 0.08);
+  --flowuz-mesh-3: rgba(255, 120, 200, 0.06);
+  --flowuz-cta-text: #0a0a0e;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --flowuz-page: #f6f3ee;
+  --flowuz-text: #1a1c22;
+  --flowuz-muted: rgba(26, 28, 34, 0.72);
+  --flowuz-faint: rgba(26, 28, 34, 0.48);
+  --flowuz-surface: rgba(255, 252, 247, 0.82);
+  --flowuz-surface-strong: rgba(255, 252, 247, 0.94);
+  --flowuz-border: rgba(26, 28, 34, 0.1);
+  --flowuz-shadow: 0 24px 80px rgba(26, 28, 34, 0.08);
+  --flowuz-header: rgba(246, 243, 238, 0.82);
+  --flowuz-card: rgba(255, 252, 247, 0.9);
+  --flowuz-accent: #ff7a3d;
+  --flowuz-accent-glow: rgba(255, 122, 61, 0.28);
+  --flowuz-accent-muted: rgba(255, 122, 61, 0.14);
+  --flowuz-hero-bg: #f6f3ee;
+  --flowuz-mesh-1: rgba(255, 122, 61, 0.14);
+  --flowuz-mesh-2: rgba(255, 200, 140, 0.2);
+  --flowuz-mesh-3: rgba(200, 180, 255, 0.1);
+  --flowuz-cta-text: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--flowuz-page);
+  color: var(--flowuz-text);
+}
+
+.flowuz-page {
+  position: relative;
+  background: var(--flowuz-page);
+  color: var(--flowuz-text);
+}
+
+.flowuz-noise {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+[data-theme="light"] .flowuz-noise {
+  opacity: 0.04;
+}
+
+.flowuz-page > header,
+.flowuz-page > main,
+.flowuz-page > footer {
+  position: relative;
+  z-index: 1;
+}
+
+.flowuz-accent-text {
+  color: var(--flowuz-accent);
+}
+
+.flowuz-accent-bg {
+  background-color: var(--flowuz-accent);
+}
+
+.flowuz-accent-muted-bg {
+  background-color: var(--flowuz-accent-muted);
+}
+
+.flowuz-cta {
+  background-color: var(--flowuz-accent);
+  color: var(--flowuz-cta-text);
+}
+
+.flowuz-card {
+  background: var(--flowuz-card);
+  border-color: var(--flowuz-border);
+}
+
+.flowuz-muted {
+  color: var(--flowuz-muted);
+}
+
+.flowuz-faint {
+  color: var(--flowuz-faint);
+}
+
+.flowuz-border {
+  border-color: var(--flowuz-border);
+}
+
+.flowuz-page[data-theme="light"] .flowuz-light-section .text-white {
+  color: var(--flowuz-text);
+}
+
+.flowuz-page[data-theme="light"] .flowuz-light-section .text-white\/88,
+.flowuz-page[data-theme="light"] .flowuz-light-section .text-white\/78,
+.flowuz-page[data-theme="light"] .flowuz-light-section .text-white\/72,
+.flowuz-page[data-theme="light"] .flowuz-light-section .text-white\/70,
+.flowuz-page[data-theme="light"] .flowuz-light-section .text-white\/68,
+.flowuz-page[data-theme="light"] .flowuz-light-section .text-white\/64,
+.flowuz-page[data-theme="light"] .flowuz-light-section .text-white\/62,
+.flowuz-page[data-theme="light"] .flowuz-light-section .text-white\/60,
+.flowuz-page[data-theme="light"] .flowuz-light-section .text-white\/58 {
+  color: var(--flowuz-muted);
+}
+
+.flowuz-page[data-theme="light"] .flowuz-light-section .text-white\/54,
+.flowuz-page[data-theme="light"] .flowuz-light-section .text-white\/48,
+.flowuz-page[data-theme="light"] .flowuz-light-section .text-white\/46,
+.flowuz-page[data-theme="light"] .flowuz-light-section .text-white\/45,
+.flowuz-page[data-theme="light"] .flowuz-light-section .text-white\/35 {
+  color: var(--flowuz-faint);
+}
+
+.flowuz-page[data-theme="light"] .flowuz-light-section .border-white\/10,
+.flowuz-page[data-theme="light"] .flowuz-light-section .border-white\/12 {
+  border-color: var(--flowuz-border);
+}
+
+.flowuz-page[data-theme="light"] .flowuz-light-section .bg-white\/\[0\.04\],
+.flowuz-page[data-theme="light"] .flowuz-light-section .bg-white\/\[0\.045\],
+.flowuz-page[data-theme="light"] .flowuz-light-section .bg-white\/\[0\.05\],
+.flowuz-page[data-theme="light"] .flowuz-light-section .bg-white\/\[0\.06\],
+.flowuz-page[data-theme="light"] .flowuz-light-section .bg-white\/\[0\.065\],
+.flowuz-page[data-theme="light"] .flowuz-light-section .bg-white\/\[0\.07\] {
+  background: var(--flowuz-card);
+}
+
+.flowuz-page[data-theme="light"] .flowuz-light-section .bg-black\/20,
+.flowuz-page[data-theme="light"] .flowuz-light-section .bg-black\/24 {
+  background: rgba(26, 28, 34, 0.05);
+}
+
+.flowuz-page[data-theme="light"] .text-flowuz-accent,
+.flowuz-page[data-theme="light"] .flowuz-accent-text {
+  color: var(--flowuz-accent);
+}
+
+::selection {
+  background: var(--flowuz-accent-muted);
+  color: var(--flowuz-text);
+}
